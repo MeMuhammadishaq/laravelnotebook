@@ -58,18 +58,13 @@
                     @enderror {{-- validation end --}}
                 </span>
             </div>
-            {{-- file --}}
+
             <div class="mb-3">
-
-                <label for="exampleFormControlInput1" class="form-label">Note Title</label>
+                <label for="exampleFormControlInput1" class="form-label">Upload Image</label>
                 <input type="file" class="form-control" name="image"
-                    value="{{ isset($edit) ? $edit->image : '' }} placeholder="image">
-
+                    value="{{ isset($edit) ? $edit->image : '' }}">
             </div>
-            {{-- file --}}
             <button type="submit" class="btn btn-primary">{{ $button }}</button>
-
-
 
         </form>
         {{-- form end --}}
@@ -106,8 +101,10 @@
                                 </td>
                                 <td>
                                     <div>
-                                        <img src="{{ asset($item->image) }}"width="50px" height="50px"
-                                            alt="image">
+                                        <a target="_blank" href="{{ asset('images/' . $item->image) }}">
+                                            <img src="{{ asset('images/' . $item->image) }}"width="50px"
+                                                height="50px" alt="image">
+                                        </a>
                                     </div>
                                 </td>
                                 <td>
